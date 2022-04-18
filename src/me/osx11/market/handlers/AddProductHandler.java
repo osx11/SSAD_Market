@@ -4,7 +4,6 @@ import me.osx11.market.BaseHandler;
 import me.osx11.market.IMarket;
 import me.osx11.market.Market;
 import me.osx11.market.Product;
-import me.osx11.market.exceptions.CommandHandleException;
 import me.osx11.market.requests.AddProductRequest;
 
 public class AddProductHandler extends BaseHandler {
@@ -16,7 +15,7 @@ public class AddProductHandler extends BaseHandler {
     }
 
     @Override
-    public void proceed() throws CommandHandleException {
+    public void proceed() {
         IMarket market = Market.getInstance();
 
         Product product = new Product(request.getProductName());
