@@ -1,5 +1,7 @@
 package me.osx11.market;
 
+import java.util.List;
+
 public interface IMarket {
     boolean hasUser(String username);
 
@@ -16,4 +18,8 @@ public interface IMarket {
     IProduct getProduct(int id);
 
     void addProduct(IProduct userduct);
+
+    List<IProduct> getProducts();
+
+    void printProducts();
 }

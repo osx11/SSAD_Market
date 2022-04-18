@@ -32,7 +32,12 @@ public class LoginHandler extends BaseHandler {
 
         market.setCurrentUser(user);
 
-        System.out.println("Welcome, " + user.getName() + " " + user.getSurname() + "!"); // todo вывести список товаров
+        System.out.println("Welcome, " + user.getName() + " " + user.getSurname() + "!");
+        System.out.println("Here is the list of available products! Use REVIEW product to add a review for the product you like:");
+        System.out.println();
+
+        market.printProducts();
+        System.out.println();
 
         request.markHandled();
     }

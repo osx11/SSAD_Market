@@ -1,15 +1,14 @@
 package me.osx11.market;
 
-import me.osx11.market.commands.ExitCommand;
-import me.osx11.market.commands.LoginCommand;
-import me.osx11.market.commands.LogoutCommand;
-import me.osx11.market.commands.RegisterCommand;
+import me.osx11.market.commands.*;
 
 public enum CommandType {
+    EXIT(ExitCommand.class),
     REGISTER(RegisterCommand.class),
     LOGIN(LoginCommand.class),
     LOGOUT(LogoutCommand.class),
-    EXIT(ExitCommand.class);
+    ADDPRODUCT(AddProductCommand.class),
+    PRODUCTS(ListProductsCommand.class);
 
     public final Class<? extends BaseCommand> baseCommandClass;
 

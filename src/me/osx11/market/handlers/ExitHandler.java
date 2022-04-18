@@ -9,12 +9,12 @@ public class ExitHandler extends BaseHandler {
     public ExitHandler(ExitRequest request) {
         super();
         this.request = request;
-
-        System.out.println("LOGIN HANDLER CREATED");
     }
 
     @Override
     public void proceed() {
+        System.out.println("Thank you and good bye!");
+
         request.markHandled();
         System.exit(0);
     }

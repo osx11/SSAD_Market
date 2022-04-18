@@ -1,6 +1,8 @@
 package me.osx11.market;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class Market implements IMarket {
     private static Market instance;
@@ -60,5 +62,17 @@ public class Market implements IMarket {
 
     public void addProduct(IProduct product) {
         this.products.put(product.getId(), product);
+    }
+
+    public List<IProduct> getProducts() {
+        return new ArrayList<>(products.values());
+    }
+
+    public void printProducts() {
+        System.out.println("ID     | NAME");
+
+        for (IProduct product : this.getProducts()) {
+            System.out.println(product.getId() + " | " + product.getName());
+        }
     }
 }

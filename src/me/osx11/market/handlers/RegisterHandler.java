@@ -33,6 +33,7 @@ public class RegisterHandler extends BaseHandler {
 
         System.out.println("Welcome, " + name + " " + surname + "!");
         System.out.println("You account is registered. You can now use LOGIN command.");
+        System.out.println();
 
         request.markHandled();
     }
