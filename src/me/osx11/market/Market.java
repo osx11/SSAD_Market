@@ -24,9 +24,6 @@ public class Market implements IMarket {
             IProduct product1 = new Product("Test product 1");
             IProduct product2 = new Product("Test product 2");
 
-            int rid = product1.addReview("Cool product fake");
-            instance.fakeReviews.put(product1.getId(), rid);
-
             instance.addUser(user);
             instance.addUser(admin);
 

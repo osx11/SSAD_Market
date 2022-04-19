@@ -4,7 +4,6 @@ import me.osx11.market.BaseCommand;
 import me.osx11.market.exceptions.CommandHandleException;
 
 import java.util.Arrays;
-import java.util.Collections;
 
 public class ReviewCommand extends BaseCommand {
     public static final String usage = "Usage: REVIEW [product ID] [your_review]";

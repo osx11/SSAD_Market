@@ -49,8 +49,37 @@ public class ReviewHandler extends BaseHandler {
         request.markHandled();
     }
 
-    int compareWithTemplateReview(String templateReview, String review) {
-        return 80;
-//        return new Random().nextInt(100);
+    private int compareWithTemplateReview(String templateReview, String review) {
+        int templateReviewLength = templateReview.length();
+        int reviewLength = review.length();
+
+        if (templateReviewLength == 0) return reviewLength;
+        if (reviewLength == 0) return templateReviewLength;
+        int[][] dist = new int[templateReviewLength + 1][reviewLength + 1];
+        for (int i = 0; i < templateReviewLength + 1; i++) {
+            dist[i][0] = i;
+        }
+        
+        for (int j = 0; j < reviewLength + 1; j++) {
+            dist[0][j] = j;
+        }
+        
+        for (int i = 1; i < templateReviewLength + 1; i++) {
+            for (int j = 1; j < reviewLength + 1; j++) {
+                int cost = templateReview.charAt(i - 1) == review.charAt(j - 1) ? 0 : 1;
+                dist[i][j] = Math.min(Math.min(dist[i - 1][j] + 1, dist[i][j - 1] + 1), dist[i - 1][j - 1] + cost);
+                if (i > 1 && j > 1 && templateReview.charAt(i - 1) == review.charAt(j - 2) && templateReview.charAt(i - 2) == review.charAt(j - 1)) {
+                    dist[i][j] = Math.min(dist[i][j], dist[i - 2][j - 2] + cost);
+                }
+            }
+        }
+
+        int distance = dist[templateReviewLength][reviewLength];
+
+        int maxLength = Math.max(templateReviewLength, reviewLength);
+        int difference = Math.abs(maxLength - distance);
+
+        int similarity = (int)(difference/(double)maxLength * 100.0D);
+        return similarity;
     }
 }
