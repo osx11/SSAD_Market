@@ -30,3 +30,14 @@ The list of available commands:
 - SHOWREVIEWS (Usage: SHOWREVIEWS [product ID])
 - DELETEFAKE (Usage: DELETEFAKE)
 ```
+
+Default credentials:
+```
+Username: user
+Password: 123123
+Authorized: false
+
+Username: admin
+Password: qwerty
+Authorized: true
+```
