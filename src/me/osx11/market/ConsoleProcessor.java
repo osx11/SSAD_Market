@@ -65,7 +65,7 @@ public class ConsoleProcessor {
                 Class<? extends BaseHandler> handlerClass = RequestType.valueOf(commandTypeString).baseHandlerClass;
                 BaseHandler handler = handlerClass.getDeclaredConstructor(requestClass).newInstance(request);
                 handler.proceed();  // if no errors, then the request was handled successfully, continue
-            } catch (CommandHandleException e) { // todo fix
+            } catch (CommandHandleException e) {
                 System.out.println(e.getMessage());
                 System.out.println();
             } catch (IllegalAccessException | InstantiationException | InvocationTargetException | NoSuchMethodException | NoSuchFieldException e) {
