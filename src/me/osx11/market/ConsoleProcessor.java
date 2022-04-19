@@ -20,6 +20,7 @@ public class ConsoleProcessor {
         return instance;
     }
 
+    @SuppressWarnings("InfiniteLoopStatement")
     public void run() throws IOException {
         System.out.println("Welcome to the market! Here is the list of all commands:");
         System.out.println();
