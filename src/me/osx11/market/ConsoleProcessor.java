@@ -64,8 +64,8 @@ public class ConsoleProcessor {
                 Request request = requestClass.getDeclaredConstructor(parameterTypes).newInstance(command.getArgs());
 
                 Class<? extends BaseHandler> handlerClass = RequestType.valueOf(commandTypeString).baseHandlerClass;
-                BaseHandler handler = handlerClass.getDeclaredConstructor(requestClass).newInstance(request);
-                handler.proceed();  // if no errors, then the request was handled successfully, continue
+                IHandler handler = handlerClass.getDeclaredConstructor(requestClass).newInstance(request);
+                handler.handleSingle();  // if no errors, then the request was handled successfully, continue
             } catch (CommandHandleException e) {
                 System.out.println(e.getMessage());
                 System.out.println();

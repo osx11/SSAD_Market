@@ -38,6 +38,7 @@ public class ReviewHandler extends BaseHandler {
             String templateReview = ((User) market.getCurrentUser()).getTemplateReview();
             int similarity = this.compareWithTemplateReview(templateReview, productReview);
 
+            // If the similarity of the given review with the template exceeds 70%, then it is marked as faked.
             if (similarity > 70) {
                 market.markReviewAsFake(productId, reviewId);
             }
@@ -49,6 +50,14 @@ public class ReviewHandler extends BaseHandler {
         request.markHandled();
     }
 
+    /**
+     * Damerau–Levenshtein distance algorithm. It is used to compare given review with the template one in order to
+     * identify if the given review is fake or not.
+     *
+     * @param templateReview template review
+     * @param review given review
+     * @return similarity (Levenshtein distance) of two reviews
+     */
     private int compareWithTemplateReview(String templateReview, String review) {
         int templateReviewLength = templateReview.length();
         int reviewLength = review.length();

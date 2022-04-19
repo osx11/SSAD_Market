@@ -51,6 +51,7 @@ public class LoginHandler extends BaseHandler {
             market.printProducts();
             System.out.println();
             System.out.println("Use REVIEW command to add a review for the product you like.");
+            System.out.println("Use SHOWREVIEWS [product_id] command to see all reviews of the product.");
         }
 
         System.out.println();
