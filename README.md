@@ -11,7 +11,7 @@ see that this review is fake, and it will be available for deleting. You can rea
 the internal structure of the program in our report: ... Also,
 [UML class diagram](https://drive.google.com/file/d/160g4VCyP59wjs47gMEL-HF1XOEJoZMDB/view?usp=sharing) is attached.
 
-##### Usage:
+### Usage:
 
 To start the program, double-click on Market.jar file or run the command:
 
