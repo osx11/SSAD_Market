@@ -6,6 +6,8 @@ import me.osx11.market.exceptions.CommandHandleException;
 import java.util.Collections;
 
 public class LogoutCommand extends BaseCommand {
+    public static final String usage = "LOGOUT";
+
     public LogoutCommand(String rawCommand) throws CommandHandleException {
         super(rawCommand);
     }

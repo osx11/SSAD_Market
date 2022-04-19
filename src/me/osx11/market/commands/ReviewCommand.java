@@ -4,11 +4,12 @@ import me.osx11.market.BaseCommand;
 import me.osx11.market.exceptions.CommandHandleException;
 
 import java.util.Arrays;
+import java.util.Collections;
 
-public class LoginCommand extends BaseCommand {
-    public static final String usage = "Usage: LOGIN [username] [password]";
+public class ReviewCommand extends BaseCommand {
+    public static final String usage = "Usage: REVIEW [product ID] [your_review]";
 
-    public LoginCommand(String rawCommand) throws CommandHandleException {
+    public ReviewCommand(String rawCommand) throws CommandHandleException {
         super(rawCommand);
     }
 
@@ -16,14 +17,14 @@ public class LoginCommand extends BaseCommand {
     public void parse() throws CommandHandleException {
         String[] split = this.getRawCommand().split(" ");
 
-        if (split.length != 3) {
+        if (split.length < 3) {
             throw new CommandHandleException(usage);
         }
 
-        String username = split[1];
-        String password = split[2];
+        String productIdString = split[1];
+        String productReview = this.getRawCommand().replace("REVIEW " + productIdString + " ", "");
 
-        this.setArgs(new String[]{username, password});
+        this.setArgs(new String[]{productIdString, productReview});
     }
 
     @Override

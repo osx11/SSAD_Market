@@ -22,4 +22,14 @@ public interface IMarket {
     List<IProduct> getProducts();
 
     void printProducts();
+
+    void printFakeReviews();
+
+    int addReview(int productId, String review);
+
+    void markReviewAsFake(int productId, int reviewId);
+
+    void deleteFakeReviews();
+
+    boolean hasFakeReviews();
 }

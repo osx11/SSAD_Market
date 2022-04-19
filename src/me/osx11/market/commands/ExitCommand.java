@@ -6,6 +6,8 @@ import me.osx11.market.exceptions.CommandHandleException;
 import java.util.Collections;
 
 public class ExitCommand extends BaseCommand {
+    public static final String usage = "Usage: EXIT";
+
     public ExitCommand(String rawCommand) throws CommandHandleException {
         super(rawCommand);
     }

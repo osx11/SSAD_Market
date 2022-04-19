@@ -32,11 +32,27 @@ public class LoginHandler extends BaseHandler {
 
         market.setCurrentUser(user);
 
-        System.out.println("Welcome, " + user.getName() + " " + user.getSurname() + "!");
-        System.out.println("Here is the list of available products! Use REVIEW product to add a review for the product you like:");
-        System.out.println();
 
-        market.printProducts();
+        System.out.println("Welcome, " + user.getName() + " " + user.getSurname() + "!");
+
+        if (user.isStaff()) {
+            if (market.hasFakeReviews()) {
+                System.out.println("There are fake reviews.");
+                System.out.println();
+
+                market.printFakeReviews();
+                System.out.println();
+                System.out.println("Use DELETEFAKE command to delete them.");
+            }
+        } else {
+            System.out.println("Here is the list of available products!");
+            System.out.println();
+
+            market.printProducts();
+            System.out.println();
+            System.out.println("Use REVIEW command to add a review for the product you like.");
+        }
+
         System.out.println();
 
         request.markHandled();

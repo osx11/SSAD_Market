@@ -6,6 +6,8 @@ import me.osx11.market.exceptions.CommandHandleException;
 import java.util.Arrays;
 
 public class RegisterCommand extends BaseCommand {
+    public static final String usage = "Usage: LOGIN [username] [name] [surname] [password]";
+
     public RegisterCommand(String rawCommand) throws CommandHandleException {
         super(rawCommand);
     }
@@ -15,7 +17,7 @@ public class RegisterCommand extends BaseCommand {
         String[] split = this.getRawCommand().split(" ");
 
         if (split.length != 5) {
-            throw new CommandHandleException("Usage: LOGIN [username] [name] [surname] [password]");
+            throw new CommandHandleException(usage);
         }
 
         String username = split[1];

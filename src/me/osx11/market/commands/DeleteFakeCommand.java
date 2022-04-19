@@ -5,10 +5,10 @@ import me.osx11.market.exceptions.CommandHandleException;
 
 import java.util.Collections;
 
-public class ListProductsCommand extends BaseCommand {
-    public static final String usage = "Usage: PRODUCTS";
+public class DeleteFakeCommand extends BaseCommand {
+    public static final String usage = "Usage: DELETEFAKE";
 
-    public ListProductsCommand(String rawCommand) throws CommandHandleException {
+    public DeleteFakeCommand(String rawCommand) throws CommandHandleException {
         super(rawCommand);
     }
 

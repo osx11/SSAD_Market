@@ -25,6 +25,7 @@ public class LogoutHandler extends BaseHandler {
         market.setCurrentUser(null);
 
         System.out.println("Successfully logged out!");
+        System.out.println();
 
         request.markHandled();
     }

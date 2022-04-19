@@ -3,19 +3,21 @@ package me.osx11.market.handlers;
 import me.osx11.market.BaseHandler;
 import me.osx11.market.IMarket;
 import me.osx11.market.Market;
-import me.osx11.market.Product;
+import me.osx11.market.User;
 import me.osx11.market.exceptions.CommandHandleException;
-import me.osx11.market.requests.AddProductRequest;
+import me.osx11.market.requests.ReviewRequest;
+import me.osx11.market.requests.ShowFakeRequest;
 
-public class AddProductHandler extends BaseHandler {
-    private final AddProductRequest request;
+import java.util.Random;
 
-    public AddProductHandler(AddProductRequest request) {
+public class ShowFakeHandler extends BaseHandler {
+    private final ShowFakeRequest request;
+
+    public ShowFakeHandler(ShowFakeRequest request) {
         super();
         this.request = request;
     }
 
-    @Override
     public void proceed() throws CommandHandleException {
         IMarket market = Market.getInstance();
 
@@ -24,13 +26,10 @@ public class AddProductHandler extends BaseHandler {
         }
 
         if (!market.getCurrentUser().isStaff()) {
-            throw new CommandHandleException("Only authorized personnel can create products.");
+            throw new CommandHandleException("Only authorized personnel can see fake reviews.");
         }
 
-        Product product = new Product(request.getProductName());
-        market.addProduct(product);
-
-        System.out.println("Product '" + request.getProductName() + "' has been added successfully!");
+        market.printFakeReviews();
         System.out.println();
 
         request.markHandled();

@@ -3,12 +3,13 @@ package me.osx11.market.commands;
 import me.osx11.market.BaseCommand;
 import me.osx11.market.exceptions.CommandHandleException;
 
+import java.util.Arrays;
 import java.util.Collections;
 
-public class AddProductCommand extends BaseCommand {
-    public static final String usage = "Usage: ADDPRODUCT [product name]";
+public class ShowReviewsCommand extends BaseCommand {
+    public static final String usage = "Usage: SHOWREVIEWS [product ID]";
 
-    public AddProductCommand(String rawCommand) throws CommandHandleException {
+    public ShowReviewsCommand(String rawCommand) throws CommandHandleException {
         super(rawCommand);
     }
 
@@ -16,13 +17,12 @@ public class AddProductCommand extends BaseCommand {
     public void parse() throws CommandHandleException {
         String[] split = this.getRawCommand().split(" ");
 
-        if (split.length < 2) {
+        if (split.length != 2) {
             throw new CommandHandleException(usage);
         }
 
-        String productName = this.getRawCommand().replace("ADDPRODUCT ", "");
-
-        this.setArgs(new String[]{productName});
+        String productIdString = split[1];
+        this.setArgs(new String[]{productIdString});
     }
 
     @Override

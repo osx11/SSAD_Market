@@ -7,7 +7,7 @@ import java.util.List;
 public abstract class BaseCommand implements ICommand {
     private final String rawCommand;
     private String[] args;
-    protected List<Class<?>> parameterTypes;
+    protected List<Class<?>> parameterTypes; // they will be used to get the required Request constructor
 
     public BaseCommand(String rawCommand) throws CommandHandleException {
         this.rawCommand = rawCommand;
