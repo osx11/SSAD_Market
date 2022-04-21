@@ -6,7 +6,7 @@ import me.osx11.market.exceptions.CommandHandleException;
 import java.util.Arrays;
 
 public class RegisterCommand extends BaseCommand {
-    public static final String usage = "Usage: LOGIN [username] [name] [surname] [password]";
+    public static final String usage = "Usage: REGISTER [username] [name] [surname] [password]";
 
     public RegisterCommand(String rawCommand) throws CommandHandleException {
         super(rawCommand);

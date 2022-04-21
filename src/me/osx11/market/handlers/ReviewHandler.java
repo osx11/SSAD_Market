@@ -4,8 +4,6 @@ import me.osx11.market.*;
 import me.osx11.market.exceptions.CommandHandleException;
 import me.osx11.market.requests.ReviewRequest;
 
-import java.util.Random;
-
 public class ReviewHandler extends BaseHandler {
     private final ReviewRequest request;
 
