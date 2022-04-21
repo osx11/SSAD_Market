@@ -8,8 +8,8 @@ However, if user have already done this earlier, the system will take the very f
 of the product and compare it with the current one. If the similarity is more than or equal to
 70%, then such a review will be marked as fake. It will be accepted anyway, but the admin will
 see that this review is fake, and it will be available for deleting. You can read more about
-the internal structure of the program in our report: Also,
-[UML class diagram](https://drive.google.com/file/d/160g4VCyP59wjs47gMEL-HF1XOEJoZMDB/view?usp=sharing) is attached.
+the internal structure of the program in [our report](https://docs.google.com/document/d/18rEJ76vCDjoni4w1h81keSmivzR2U52_bVfMhdmPvPQ/edit?usp=sharing). 
+Also, [UML class diagram](https://drive.google.com/file/d/160g4VCyP59wjs47gMEL-HF1XOEJoZMDB/view?usp=sharing) is attached.
 
 ### Usage:
 
