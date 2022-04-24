@@ -18,7 +18,6 @@ public class RegisterRequest extends Request {
         this.password = password;
     }
 
-
     public String getUsername() {
         return this.username;
     }

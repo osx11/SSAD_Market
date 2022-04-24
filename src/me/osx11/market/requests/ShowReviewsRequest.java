@@ -12,7 +12,6 @@ public class ShowReviewsRequest extends Request {
         this.productId = productId;
     }
 
-
     public String getProductId() {
         return this.productId;
     }

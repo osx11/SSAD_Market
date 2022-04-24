@@ -14,7 +14,6 @@ public class LoginRequest extends Request {
         this.password = password;
     }
 
-
     public String getUsername() {
         return this.username;
     }
