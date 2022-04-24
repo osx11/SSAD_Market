@@ -6,7 +6,7 @@ import java.util.List;
 public class Product implements IProduct {
     private final int id;
     private final String name;
-    List<String> reviews = new ArrayList<>();
+    private List<String> reviews = new ArrayList<>();
 
     public Product(String name) {
         this.name = name;
